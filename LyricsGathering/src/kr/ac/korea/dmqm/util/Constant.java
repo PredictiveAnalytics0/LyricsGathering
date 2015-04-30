@@ -22,7 +22,7 @@ public class Constant {
 	public static final String MARK_ASTERISK = "*";
 	public static final String MARK_BIG_T = "\"";
 
-	public static String[] spChars = { "`", "-", "=", ";", "'", "/", "~", "!", "\\,",
+	public static String[] spChars = { "`", "-", "=", ";", "'", "/", "~", "!", "\\,","\"",
 			"@", "#", "$", "%", "^", "&", "|", ":", "<", ">", MARK_BIG_T,
 			"\\*", "\\+", "\\{", "}", "\\?", "\\." };
 

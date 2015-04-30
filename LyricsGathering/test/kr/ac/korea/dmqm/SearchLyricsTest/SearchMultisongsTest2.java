@@ -9,7 +9,7 @@ public class SearchMultisongsTest2 {
 		String in = "C:\\Temp\\20150501\\input\\$year$_top100_billboardYearEndCharts.csv";
 		String out = "C:\\temp\\20150501\\output\\$year$\\";
 
-		for (int i = 2010; i <= 2014; i++) {
+		for (int i = 2011; i <= 2012; i++) {
 			try {
 				String inputPath = in.replace("$year$", String.valueOf(i));
 				String outputPath = out.replace("$year$", String.valueOf(i));

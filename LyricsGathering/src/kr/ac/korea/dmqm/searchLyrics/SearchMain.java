@@ -99,7 +99,7 @@ public class SearchMain {
 	private static Logger logger;
 	private static boolean isInitilize = false;
 	
-	private FileAppender fa = new FileAppender();
+	private static FileAppender fa = new FileAppender();
 	private void initializeOutput(String outputPath) {
 		fa.setName("song's list");
 		fa.setFile(outputPath + OUTPUT_FILE_NAME);
