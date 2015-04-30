@@ -29,6 +29,11 @@ public class SearchMain {
 					title.length());
 		}
 
+		// FIXME : e.g. > DJ Snake and Lil Jon -> DJ Snake
+		if (singer.contains(Constant.CHAR_AND)) {
+			singer = singer.substring(0, singer.indexOf(Constant.CHAR_AND));
+		}
+		
 		for (Sites site : sites) {
 			final List<Lyrics> lyrics = SearchUtil.getLyricsBySites(title,
 					EMPTY.STRING_NULL, singer, site);
@@ -120,24 +125,28 @@ public class SearchMain {
 
 		Iterator<Song> it = list.iterator();
 		while(it.hasNext()) {
-			Song song = it.next();
-			String title = song.getTitle();
-			String singer = song.getSinger();
-			
-			String lyrics = null;
-			if(song.getLyric() != null) {
-				lyrics = removeEscapeChar(song.getLyric().getText());
+			try {
+				Song song = it.next();
+				String title = song.getTitle();
+				String singer = song.getSinger();
+				
+				String lyrics = null;
+				if(song.getLyric() != null) {
+					lyrics = removeEscapeChar(song.getLyric().getText());
+				}
+				
+				if(lyrics == null || lyrics.length() ==0) {
+					continue;
+				}
+				
+				StringBuilder sb = new StringBuilder();
+				sb.append(title).append(Constant.MARK_COMMA).append(singer)
+						.append(Constant.MARK_COMMA).append(lyrics)
+						.append(Constant.MARK_ENTER);
+				logger.debug(sb.toString());
+			} catch (Exception e) {
+				// do not catch any exception and continue to the initial point
 			}
-			
-			if(lyrics == null || lyrics.length() ==0) {
-				continue;
-			}
-			
-			StringBuilder sb = new StringBuilder();
-			sb.append(title).append(Constant.MARK_COMMA).append(singer)
-					.append(Constant.MARK_COMMA).append(lyrics)
-					.append(Constant.MARK_ENTER);
-			logger.debug(sb.toString());
 		}
 	}
 	

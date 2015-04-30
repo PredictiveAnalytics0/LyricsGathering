@@ -6,7 +6,8 @@ public class Constant {
 	public static final String CHAR_RANKS = "ranks";
 	public static final String CHAR_BLANK = " ";
 	public static final String CHAR_HELP = "HELP";
-
+	public static final String CHAR_AND = " and";
+	
 	public static final String MARK_TAB = "\t";
 	public static final String MARK_ENTER = "\n";
 	public static final String MARK_DOUBLE_ENTER = "\n\n";

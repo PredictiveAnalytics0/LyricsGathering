@@ -6,7 +6,7 @@ import java.util.List;
 import kr.ac.korea.dmqm.searchLyrics.SearchMain;
 import kr.ac.korea.dmqm.vo.Song;
 
-public class Main {
+public class SimpleSearchTest2 {
 	public static void main(String[] args) {
 		SearchMain main = new SearchMain();
 
@@ -14,7 +14,7 @@ public class Main {
 		main.init();
 
 		// search lyrics
-		Song song = main.searchLyrics(0, "Uptown Funk", "");
+		Song song = main.searchLyrics(0, "My Hitta", "Yg");
 		
 		
 		// logging
